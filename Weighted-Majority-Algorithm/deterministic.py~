@@ -1,0 +1,33 @@
+import random
+
+class Deterministic(object):
+
+    def __init__(self, matchID):
+        #self.matchID += 1
+        self.labels = [1,-1]
+        self.obsVector = [matchID]
+        self.T = 100
+        #self.labelList = generateSetSequence()
+
+
+    '''def generateSetSequence(self, matchID):
+        labelList = [0]*self.T
+        #labelList = [random.choice(self.labels) for element in labelList]
+        labelList = [1 if matchID%4 in [0,1] else -1 for x in labelList]
+        return labelList'''
+
+
+    def generateLabel(self, matchID):
+        #return labelList[matchID]
+        if matchID%3 is 0:
+            return 1
+        else:
+            return -1
+
+    def generateObservation(self, matchID):
+        self.obsVector[0] += 1
+        return self.obsVector[0]
+
+
+
+
